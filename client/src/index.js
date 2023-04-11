@@ -9,15 +9,27 @@ import logger from "redux-logger"
 import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 // import {rootReducer}  from './reducers/rootReducer';
+import { Provider } from 'react-redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+
+
+
+
+
+
+const rootReducer = (state,action)=> {return state;}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const store = createStore(rootReducer,{
+  movies:[]
+},composeWithDevTools(applyMiddleware(logger,thunk)));
 root.render(
    <React.StrictMode>
-    
+    <Provider store={store}>
     <BrowserRouter>
     <App />
     </BrowserRouter>
-   
+    </Provider>
   </React.StrictMode>
 );
 
