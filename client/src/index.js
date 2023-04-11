@@ -11,18 +11,17 @@ import thunk from 'redux-thunk';
 // import {rootReducer}  from './reducers/rootReducer';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import mainreducer from './reducer/mainreducer';
 
 
 
 
 
 
-const rootReducer = (state,action)=> {return state;}
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const store = createStore(rootReducer,{
-  movies:[]
-},composeWithDevTools(applyMiddleware(logger,thunk)));
+const store = createStore(mainreducer,composeWithDevTools(applyMiddleware(logger,thunk)));
 root.render(
    <React.StrictMode>
     <Provider store={store}>
