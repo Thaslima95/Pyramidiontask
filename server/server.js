@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const { createList } = require("./Middlewares/moviemiddleware");
+
 const { readdirSync } = require("fs");
 // const { readdirSync } = require("fs");
 require("dotenv").config();
